@@ -1,4 +1,4 @@
-/** Real business data (aligned with Google Maps listing) */
+/** Real business data listing) */
 export const BIZ = {
   name: "Guntur Restro",
   tagline: "Gateway to Araku · Est. 2013",
