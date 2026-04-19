@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    @apply bg-brand-cream text-brand-obsidian antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes pulseRing {
+    0% {
+      box-shadow: 0 0 0 0 rgba(244, 196, 48, 0.35);
+    }
+    70% {
+      box-shadow: 0 0 0 16px rgba(244, 196, 48, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(244, 196, 48, 0);
+    }
+  }
+
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .float-anim {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .pulse-anim {
+    animation: pulseRing 2.2s infinite;
+  }
+
+  .hero-line-1 {
+    animation: heroFadeIn 0.9s ease 0.2s both;
+  }
+
+  .hero-line-2 {
+    animation: heroFadeIn 0.9s ease 0.45s both;
+  }
+
+  .hero-sub {
+    animation: heroFadeIn 0.9s ease 0.65s both;
+  }
+
+  .hero-btns {
+    animation: heroFadeIn 0.9s ease 0.85s both;
+  }
+
+  .hero-badge {
+    animation: heroFadeIn 0.9s ease 1.05s both;
+  }
+
+  .hide-mobile {
+    @apply hidden md:block;
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+  }
+
+  .review-card:hover {
+    transform: translateY(-3px);
+    transition: transform 0.25s ease;
+  }
+}
